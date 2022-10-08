@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
         - name: gateway-app
-          image: nicolasundiano/serviciosapigateway:latest
+          image: nicolasundiano/serviciosapigateway:v2.#{Build.BuildId}#
           ports:
             - containerPort: 80
