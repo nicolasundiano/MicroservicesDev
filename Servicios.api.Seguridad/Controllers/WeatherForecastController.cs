@@ -26,7 +26,7 @@ namespace Servicios.api.Seguridad.Controllers
         [HttpGet]
         public string Get()
         {
-            return "carisimo bottom culia";
+            return "se va a la pqplp";
         }
     }
 }
