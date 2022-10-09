@@ -132,7 +132,18 @@
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       }
+    },
+    {
+      "DownstreamPathTemplate": "/api/WeatherForecast",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "microservice-seguridad-service",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/clima",
+      "UpstreamHttpMethod": [ "GET" ]
     }
-
   ]
 }
