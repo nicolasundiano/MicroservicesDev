@@ -6,6 +6,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Servicios.api.Seguridad.Core.Application;
 using Servicios.api.Seguridad.Core.Dto;
 
@@ -17,9 +18,11 @@ namespace Servicios.api.Seguridad.Controllers
     {
 
         private readonly IMediator _mediator;
+        private readonly IConfiguration _configuration;
 
-        public UsuarioController(IMediator mediator) {
+        public UsuarioController(IMediator mediator, IConfiguration configuration) {
             _mediator = mediator;
+            _configuration = configuration;
         }
 
         [HttpPost("registrar")]
@@ -30,8 +33,9 @@ namespace Servicios.api.Seguridad.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<UsuarioDto>> Login(Login.UsuarioLoginCommand parametros)
         {
-            //return Ok("hola");
-            return await _mediator.Send(parametros);
+            var x = _configuration.GetSection("ConnectionStrings:ConexionDB");
+            return Ok(x);
+            //return await _mediator.Send(parametros);
         }
 
         [HttpGet]
