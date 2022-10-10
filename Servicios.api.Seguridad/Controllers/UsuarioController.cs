@@ -30,8 +30,8 @@ namespace Servicios.api.Seguridad.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<UsuarioDto>> Login(Login.UsuarioLoginCommand parametros)
         {
-            return Ok("hola");
-            //return await _mediator.Send(parametros);
+            //return Ok("hola");
+            return await _mediator.Send(parametros);
         }
 
         [HttpGet]
