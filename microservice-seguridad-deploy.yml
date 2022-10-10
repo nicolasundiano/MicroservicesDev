@@ -25,4 +25,4 @@ spec:
             - containerPort: 80
           env:
             - name: ConnectionStrings__ConexionDB
-              value: Server=mssql-service;Database=Seguridad;User=sa;Password=Nosejose20!
+              value: Server=mssql-service;Database=Seguridad;User=sa;Password=Nosejosse20!
